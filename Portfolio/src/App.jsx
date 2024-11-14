@@ -65,7 +65,7 @@ function App() {
       </div>
 
       <footer className="footer">
-        <div className="bg-gray-400 p-3 text-center">
+        <div className="bg-gray-400 p-6 text-center">
           <p className="text-lg font-semibold mb-4">Follow me on</p>
           <ul className="flex justify-center space-x-6">
             <li>
