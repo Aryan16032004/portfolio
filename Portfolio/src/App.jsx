@@ -11,37 +11,39 @@ function App() {
 
   return (
     <>
-      <nav className="bg-black p-7">
-        <h1 className="text-white text-3xl">Dr Gurraj Singh</h1>
+      {/* Navbar */}
+      <nav className="bg-blue-900 text-white p-6 shadow-lg">
+        <h1 className="text-4xl font-bold">Dr. Gurraj Singh</h1>
       </nav>
 
-      <div className="main-content-container">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex p-4">
-            <div className="mr-4">
-              <img
-                src="https://www.nitj.ac.in/images/faculty/20032631333.jpg"
-                alt="Dr Gurraj Singh"
-                className="w-32 h-32 object-cover rounded-full"
-              />
-            </div>
-            <div>
-              <p className="font-semibold">Assistant Professor (Grade-II)</p>
-              <p>Department: Industrial and Production Engineering</p>
-              <p>Email: <a href="mailto:singhg@nitj.ac.in" className="text-blue-500">singhg@nitj.ac.in</a></p>
+      {/* Main Content */}
+      <div className="main-content-container bg-gray-100 min-h-screen">
+        <div className="max-w-5xl mx-auto py-8">
+          {/* Header Section */}
+          <div className="flex items-center bg-white shadow-md rounded-lg p-6">
+            <img
+              src="https://www.nitj.ac.in/images/faculty/20032631333.jpg"
+              alt="Dr Gurraj Singh"
+              className="w-32 h-32 object-cover rounded-full border-4 border-blue-900"
+            />
+            <div className="ml-6">
+              <p className="text-xl font-semibold">Assistant Professor (Grade-II)</p>
+              <p className="text-gray-700">Department: Industrial and Production Engineering</p>
+              <p>Email: <a href="mailto:singhg@nitj.ac.in" className="text-blue-700 underline">singhg@nitj.ac.in</a></p>
               <p>Phone: +91 9888853154</p>
             </div>
           </div>
 
-          <div className="border-t border-gray-200 mt-4">
-            <nav className="flex space-x-4 p-4">
+          {/* Tabs */}
+          <div className="mt-8">
+            <nav className="flex space-x-6 border-b border-gray-300 pb-2">
               {tabs.map((tab) => (
                 <button
                   key={tab}
-                  className={`text-lg px-3 py-2 ${
+                  className={`text-lg font-medium px-3 py-2 rounded-md ${
                     selectedTab === tab
-                      ? 'border-b-2 border-blue-500 text-blue-500'
-                      : 'text-gray-700 hover:text-blue-500'
+                      ? 'bg-blue-900 text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900'
                   }`}
                   onClick={() => setSelectedTab(tab)}
                 >
@@ -51,35 +53,47 @@ function App() {
             </nav>
           </div>
 
-          <div className="p-4">
-            {selectedTab === 'Biography' && 
-            <p>
-              Dr. Gurraj Singh is currently serving as Assistant Professor in the Department of Industrial and Production Engineering, Dr B R Ambedkar National Institute of Technology Jalandhar, India (NITJ). Prior to this engagement at NITJ, he served as Assistant Professor in the School of Mechanical Engineering at Lovely Professional University, Phagwara, Punjab. He did his Ph.D. in Industrial and profuction engineering from NIT Jalandhar in 2017 and MTech. in Manufacturing Technology from NIT Jalandhar in 2012 while Btech in industrial engineering from NIT Jalandhar in 2009. His research interests include: Life cycle assessment, Sustainable manufacturing, Farm machinery and parametric optimization through Design of Experiments. He has a credit for publishing a number of research articles (~40) in international peer-reviewed SCI, SCOPUS indexed journals, International conferences, book chapters, and been granted 2 patents and 1 copyright. He had supervised 4 MTech projects, 12 BTech projects, and currently supervising 7 Ph.D. students. He had been an invited speaker, guest, sessions chair, and had organized conferences and short-term courses at national and international level in India. He also acts as review for some of the most reputed international journals. He also has 3 books to his name as the author while 2 books as editor.
-            </p>
-            }
-            {selectedTab === 'Research Statement' && <p>This is the research statement content.</p>}
-            {selectedTab === 'Research Interest' && <p>Life Cycle Assessment, Manufacturing processes, Farm machinery, Machining, Sustainable manufacturing , Bio waste management</p>}
-            {selectedTab === 'Selected Publications' && <p>This is the selected publications content.</p>}
+          {/* Tab Content */}
+          <div className="mt-6 bg-white shadow-md rounded-lg p-6">
+            {selectedTab === 'Biography' && (
+              <p className="text-gray-800 leading-7">
+                Dr. Gurraj Singh is currently serving as Assistant Professor in the Department of Industrial and Production Engineering,
+                Dr. B R Ambedkar National Institute of Technology Jalandhar, India (NITJ). Prior to this engagement at NITJ, he served as
+                Assistant Professor in the School of Mechanical Engineering at Lovely Professional University, Phagwara, Punjab. He did his Ph.D. in Industrial
+                and production engineering from NIT Jalandhar in 2017 and MTech. in Manufacturing Technology from NIT Jalandhar in 2012 while
+                BTech in industrial engineering from NIT Jalandhar in 2009. His research interests include Life cycle assessment, Sustainable
+                manufacturing, Farm machinery, and parametric optimization through Design of Experiments. He has published ~40 research
+                articles, holds 2 patents and 1 copyright, and has supervised numerous projects.
+              </p>
+            )}
+            {selectedTab === 'Research Statement' && <p className="text-gray-800">This is the research statement content.</p>}
+            {selectedTab === 'Research Interest' && (
+              <p className="text-gray-800">
+                Life Cycle Assessment, Manufacturing processes, Farm machinery, Machining, Sustainable manufacturing, Bio waste management
+              </p>
+            )}
+            {selectedTab === 'Selected Publications' && <p className="text-gray-800">This is the selected publications content.</p>}
           </div>
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="bg-gray-400 p-6 text-center">
+      {/* Footer */}
+      <footer className="bg-blue-900 text-white py-6">
+        <div className="max-w-5xl mx-auto text-center">
           <p className="text-lg font-semibold mb-4">Follow me on</p>
-          <ul className="flex justify-center space-x-6">
+          <ul className="flex justify-center space-x-6 text-2xl">
             <li>
-              <a href="https://www.linkedin.com/in/gurraj-singh-2053b82b2/" target="_blank" rel="noopener noreferrer" className="icon linkedin">
+              <a href="https://www.linkedin.com/in/gurraj-singh-2053b82b2/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
                 <FaLinkedin />
               </a>
             </li>
             <li>
-              <a href="https://www.researchgate.net/profile/Gurraj-Singh-2" target="_blank" rel="noopener noreferrer" className="icon researchgate">
+              <a href="https://www.researchgate.net/profile/Gurraj-Singh-2" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
                 <FaResearchgate />
               </a>
             </li>
             <li>
-              <a href="https://scholar.google.com/citations?user=uRDJmTIAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="icon googlescholar">
+              <a href="https://scholar.google.com/citations?user=uRDJmTIAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
                 <SiGooglescholar />
               </a>
             </li>
