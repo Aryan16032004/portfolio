@@ -31,7 +31,7 @@ function App() {
             <img
               src="https://www.nitj.ac.in/images/faculty/20032631333.jpg"
               alt="Dr Gurraj Singh"
-              className="w-32 h-32 object-cover rounded-full border-4 border-blue-900"
+              className="w-40 h-40 rounded-full border-4 border-blue-900"
             />
             <div className="mt-4 sm:mt-0 sm:ml-6 text-center sm:text-left">
               <p className="text-lg sm:text-xl font-semibold">
